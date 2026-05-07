@@ -153,5 +153,7 @@ dependencies {
         exclude(group = "androidx.collection", module = "collection-ktx")
         exclude(group = "androidx.collection", module = "collection-jvm") // If necessary
     }
+    implementation(libs.termux.terminal.view)
+    implementation(libs.termux.terminal.emulator)
     implementation("io.github.Rosemoe.sora-editor:editor:+")
 }
