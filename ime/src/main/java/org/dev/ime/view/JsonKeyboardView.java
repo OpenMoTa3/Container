@@ -152,15 +152,16 @@ public class JsonKeyboardView extends View {
                 canvas.drawText(text, key.x + key.width / 2f, key.y + key.height / 2f + mRect.height() / 2f, mPaint);
             }
 
-            // 3. 顺时针绘制四角角标: 0=右上, 1=右下, 2=左下, 3=左上
+            // 3. 顺时针绘制四角角标: 0=左上(上滑), 1=右上(右滑), 2=右下(下滑), 3=左下(左滑)
             if (key.popupCharacters != null && !key.popupCharacters.isEmpty()) {
                 mPaint.setColor(mColorTextSecondary);
                 mPaint.setTextSize(22f);
                 int len = key.popupCharacters.length();
                 for (int i = 0; i < len && i < 4; i++) {
-                    mPaint.setTextAlign((i <= 1) ? Paint.Align.RIGHT : Paint.Align.LEFT);
-                    float tx = (i <= 1) ? key.x + key.width - 10 : key.x + 10;
-                    float ty = (i == 0 || i == 3) ? key.y + 26 : key.y + key.height - 10;
+                    boolean isRight = (i == 1 || i == 2);
+                    mPaint.setTextAlign(isRight ? Paint.Align.RIGHT : Paint.Align.LEFT);
+                    float tx = isRight ? key.x + key.width - 10 : key.x + 10;
+                    float ty = (i <= 1) ? key.y + 26 : key.y + key.height - 10;
                     canvas.drawText(String.valueOf(key.popupCharacters.charAt(i)), tx, ty, mPaint);
                 }
             }
@@ -193,7 +194,7 @@ public class JsonKeyboardView extends View {
                         setShifted(!mShifted);
                         if (mActionListener != null) mActionListener.onKey(primaryCode, mCurrentKey.codes);
                     } else if (mActionListener != null) {
-                        // 判定四方向手势滑动 (顺时针: 0=上, 1=右, 2=下, 3=左)
+                        // 判定四方向手势滑动 (顺时针: 0=左上上滑, 1=右上右滑, 2=右下下滑, 3=左下左滑)
                         float dx = e.getX() - mDownX;
                         float dy = e.getY() - mDownY;
                         int swipeDirection = -1;
