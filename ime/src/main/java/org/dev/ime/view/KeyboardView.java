@@ -66,7 +66,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     private static final boolean DEBUG = false;
     private static final int NOT_A_KEY = -1;
     private static final int[] KEY_DELETE = { Keyboard.KEYCODE_DELETE };
-    private static final int[] LONG_PRESSABLE_STATE_SET = { R.attr.state_long_pressable };
+    private static final int[] LONG_PRESSABLE_STATE_SET = { /*R.attr.state_long_pressable */};
 
     private Keyboard mKeyboard;
     private int mCurrentKeyIndex = NOT_A_KEY;
@@ -193,7 +193,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     Handler mHandler;
 
     public KeyboardView(Context context, AttributeSet attrs) {
-        this(context, attrs, com.android.internal.R.attr.keyboardViewStyle);
+        this(context, attrs);
     }
 
     public KeyboardView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -203,17 +203,17 @@ public class KeyboardView extends View implements View.OnClickListener {
     public KeyboardView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
-        TypedArray a = context.obtainStyledAttributes(
+       /* TypedArray a = context.obtainStyledAttributes(
                 attrs, android.R.styleable.KeyboardView, defStyleAttr, defStyleRes);
 
         LayoutInflater inflate =
                 (LayoutInflater) context
                         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+*/
         int previewLayout = 0;
         int keyTextSize = 0;
 
-        int n = a.getIndexCount();
+       /**int n = a.getIndexCount();
 
         for (int i = 0; i < n; i++) {
             int attr = a.getIndex(i);
@@ -297,7 +297,7 @@ public class KeyboardView extends View implements View.OnClickListener {
         mAccessibilityManager = AccessibilityManager.getInstance(context);
         mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
-        resetMultiTap();
+        resetMultiTap();**/
     }
 
     @Override
@@ -884,25 +884,25 @@ public class KeyboardView extends View implements View.OnClickListener {
             final String text;
             switch (code) {
                 case Keyboard.KEYCODE_ALT:
-                    text = mContext.getString(R.string.keyboardview_keycode_alt);
+                    text =" mContext.getString(R.string.keyboardview_keycode_alt)";
                     break;
                 case Keyboard.KEYCODE_CANCEL:
-                    text = mContext.getString(R.string.keyboardview_keycode_cancel);
+                   text = "mContext.getString(R.string.keyboardview_keycode_cancel)";
                     break;
                 case Keyboard.KEYCODE_DELETE:
-                    text = mContext.getString(R.string.keyboardview_keycode_delete);
+                    text = "mContext.getString(R.string.keyboardview_keycode_delete)";
                     break;
                 case Keyboard.KEYCODE_DONE:
-                    text = mContext.getString(R.string.keyboardview_keycode_done);
+                 text = "mContext.getString(R.string.keyboardview_keycode_done)";
                     break;
                 case Keyboard.KEYCODE_MODE_CHANGE:
-                    text = mContext.getString(R.string.keyboardview_keycode_mode_change);
+                   text = "mContext.getString(R.string.keyboardview_keycode_mode_change)";
                     break;
                 case Keyboard.KEYCODE_SHIFT:
-                    text = mContext.getString(R.string.keyboardview_keycode_shift);
+                   text =" mContext.getString(R.string.keyboardview_keycode_shift)";
                     break;
                 case '\n':
-                    text = mContext.getString(R.string.keyboardview_keycode_enter);
+                    text = "mContext.getString(R.string.keyboardview_keycode_enter)";
                     break;
                 default:
                     text = String.valueOf((char) code);

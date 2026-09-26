@@ -138,7 +138,7 @@ public class Keyboard {
         
         public Row(Resources res, Keyboard parent, XmlResourceParser parser) {
             this.parent = parent;
-            TypedArray a = res.obtainAttributes(Xml.asAttributeSet(parser), 
+         /*   TypedArray a = res.obtainAttributes(Xml.asAttributeSet(parser), 
                     com.android.internal.R.styleable.Keyboard);
             defaultWidth = getDimensionOrFraction(a, 
                     com.android.internal.R.styleable.Keyboard_keyWidth, 
@@ -158,7 +158,7 @@ public class Keyboard {
             rowEdgeFlags = a.getInt(com.android.internal.R.styleable.Keyboard_Row_rowEdgeFlags, 0);
             mode = a.getResourceId(com.android.internal.R.styleable.Keyboard_Row_keyboardMode,
                     0);
-            a.recycle();
+            a.recycle();*/
         }
     }
 
@@ -250,7 +250,7 @@ public class Keyboard {
             this.x = x;
             this.y = y;
             
-            TypedArray a = res.obtainAttributes(Xml.asAttributeSet(parser), 
+         /*   TypedArray a = res.obtainAttributes(Xml.asAttributeSet(parser), 
                     com.android.internal.R.styleable.Keyboard);
 
             width = getDimensionOrFraction(a, 
@@ -305,7 +305,7 @@ public class Keyboard {
             if (codes == null && !TextUtils.isEmpty(label)) {
                 codes = new int[] { label.charAt(0) };
             }
-            a.recycle();
+            a.recycle();*/
         }
         
         
@@ -472,8 +472,7 @@ public class Keyboard {
         rows.add(row);
     }
 
-    (maxTargetSdk = Build.VERSION_CODES.P, trackingBug = 115609023)
-    final void resize(int newWidth, int newHeight) {
+   final void resize(int newWidth, int newHeight) {
         int numRows = rows.size();
         for (int rowIndex = 0; rowIndex < numRows; ++rowIndex) {
             Row row = rows.get(rowIndex);
