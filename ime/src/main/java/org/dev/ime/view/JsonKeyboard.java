@@ -5,8 +5,7 @@ import android.util.DisplayMetrics;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,12 +39,12 @@ public class JsonKeyboard {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         this.mTotalWidth = dm.widthPixels;
         try {
-            StringBuilder sb = new StringBuilder();
-            try (BufferedReader r = new BufferedReader(new InputStreamReader(context.getAssets().open(assetPath), StandardCharsets.UTF_8))) {
-                String line;
-                while ((line = r.readLine()) != null) sb.append(line);
+            byte[] buf;
+            try (InputStream is = context.getAssets().open(assetPath)) {
+                buf = new byte[is.available()];
+                is.read(buf);
             }
-            JSONObject root = new JSONObject(sb.toString());
+            JSONObject root = new JSONObject(new String(buf, StandardCharsets.UTF_8));
             int defW = parseDim(root.opt("keyWidth"), mTotalWidth, dm, mTotalWidth / 10);
             int defH = parseDim(root.opt("keyHeight"), mTotalWidth, dm, (int) (50 * dm.density));
             int defVGap = parseDim(root.opt("verticalGap"), mTotalWidth, dm, 0);
@@ -55,32 +54,28 @@ public class JsonKeyboard {
 
             int curY = 0;
             for (int r = 0; r < rows.length(); r++) {
-                JSONObject rowObj = rows.getJSONObject(r);
-                int rH = parseDim(rowObj.opt("keyHeight"), mTotalWidth, dm, defH);
-                int rW = parseDim(rowObj.opt("keyWidth"), mTotalWidth, dm, defW);
-                int rVGap = parseDim(rowObj.opt("verticalGap"), mTotalWidth, dm, defVGap);
+                JSONObject row = rows.getJSONObject(r);
+                int rH = parseDim(row.opt("keyHeight"), mTotalWidth, dm, defH);
+                int rW = parseDim(row.opt("keyWidth"), mTotalWidth, dm, defW);
+                int rVGap = parseDim(row.opt("verticalGap"), mTotalWidth, dm, defVGap);
                 if (r > 0) curY += rVGap;
 
-                JSONArray keys = rowObj.optJSONArray("keys");
+                JSONArray keys = row.optJSONArray("keys");
                 if (keys != null) {
                     int curX = 0;
                     for (int k = 0; k < keys.length(); k++) {
                         JSONObject kObj = keys.getJSONObject(k);
                         int kW = parseDim(kObj.opt("keyWidth"), mTotalWidth, dm, rW);
                         int kH = parseDim(kObj.opt("keyHeight"), mTotalWidth, dm, rH);
-                        int kGap = parseDim(kObj.opt("horizontalGap"), mTotalWidth, dm, 0);
+                        curX += parseDim(kObj.opt("horizontalGap"), mTotalWidth, dm, 0);
 
-                        curX += kGap;
                         Key key = new Key(curX, curY, kW, kH);
-
                         JSONArray cArr = kObj.optJSONArray("codes");
                         if (cArr != null) {
                             key.codes = new int[cArr.length()];
                             for (int i = 0; i < cArr.length(); i++) key.codes[i] = cArr.getInt(i);
-                        } else if (kObj.has("codes")) {
-                            key.codes = new int[]{ kObj.getInt("codes") };
                         } else {
-                            key.codes = new int[0];
+                            key.codes = kObj.has("codes") ? new int[]{ kObj.getInt("codes") } : new int[0];
                         }
 
                         key.label = kObj.optString("label", null);

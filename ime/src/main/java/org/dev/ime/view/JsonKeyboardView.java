@@ -114,9 +114,10 @@ public class JsonKeyboardView extends View {
 
     @Override
     protected void onMeasure(int widthSpec, int heightSpec) {
-        int w = mKeyboard != null ? mKeyboard.getMinWidth() : getPaddingLeft() + getPaddingRight();
-        int h = mKeyboard != null ? mKeyboard.getHeight() : getPaddingTop() + getPaddingBottom();
-        setMeasuredDimension(resolveSize(w, widthSpec), resolveSize(h, heightSpec));
+        int w = mKeyboard != null ? mKeyboard.getMinWidth() : 0;
+        int h = mKeyboard != null ? mKeyboard.getHeight() : 0;
+        setMeasuredDimension(resolveSize(w + getPaddingLeft() + getPaddingRight(), widthSpec),
+                             resolveSize(h + getPaddingTop() + getPaddingBottom(), heightSpec));
     }
 
     @Override
@@ -132,7 +133,7 @@ public class JsonKeyboardView extends View {
             mPaint.setColor(key == mCurrentKey ? mColorKeyActive : (key.isModifier || (key.codes.length > 0 && key.codes[0] < 0) ? mColorKeyModifier : mColorKeyNormal));
             canvas.drawRoundRect(key.x + 4, key.y + 4, key.x + key.width - 4, key.y + key.height - 4, 12, 12, mPaint);
 
-            // 2. 绘制图标
+            // 2. 绘制图标/主文字
             if (key.icon != null && !key.icon.isEmpty()) {
                 int id = getContext().getResources().getIdentifier(key.icon, "drawable", getContext().getPackageName());
                 Drawable d = id != 0 ? getContext().getDrawable(id) : null;
@@ -141,12 +142,8 @@ public class JsonKeyboardView extends View {
                     d.setBounds(key.x + (key.width - w) / 2, key.y + (key.height - h) / 2, key.x + (key.width + w) / 2, key.y + (key.height + h) / 2);
                     d.setTint(mColorTextPrimary);
                     d.draw(canvas);
-                    continue;
                 }
-            }
-
-            // 3. 绘制主文字
-            if (key.label != null) {
+            } else if (key.label != null) {
                 String text = (mShifted && key.label.length() == 1) ? key.label.toUpperCase() : key.label;
                 mPaint.setColor(mColorTextPrimary);
                 mPaint.setTextSize(key.label.length() > 1 ? 32f : 44f);
@@ -155,31 +152,16 @@ public class JsonKeyboardView extends View {
                 canvas.drawText(text, key.x + key.width / 2f, key.y + key.height / 2f + mRect.height() / 2f, mPaint);
             }
 
-            // 4. 绘制四周角标提示字符 (顺时针: 0=右上上滑, 1=右下滑, 2=左下滑, 3=左上滑)
+            // 3. 顺时针绘制四角角标: 0=右上, 1=右下, 2=左下, 3=左上
             if (key.popupCharacters != null && !key.popupCharacters.isEmpty()) {
                 mPaint.setColor(mColorTextSecondary);
                 mPaint.setTextSize(22f);
                 int len = key.popupCharacters.length();
-
-                // 0: 右上 (上滑)
-                if (len > 0) {
-                    mPaint.setTextAlign(Paint.Align.RIGHT);
-                    canvas.drawText(String.valueOf(key.popupCharacters.charAt(0)), key.x + key.width - 10, key.y + 26, mPaint);
-                }
-                // 1: 右下 (右滑)
-                if (len > 1) {
-                    mPaint.setTextAlign(Paint.Align.RIGHT);
-                    canvas.drawText(String.valueOf(key.popupCharacters.charAt(1)), key.x + key.width - 10, key.y + key.height - 10, mPaint);
-                }
-                // 2: 左下 (下滑)
-                if (len > 2) {
-                    mPaint.setTextAlign(Paint.Align.LEFT);
-                    canvas.drawText(String.valueOf(key.popupCharacters.charAt(2)), key.x + 10, key.y + key.height - 10, mPaint);
-                }
-                // 3: 左上 (左滑)
-                if (len > 3) {
-                    mPaint.setTextAlign(Paint.Align.LEFT);
-                    canvas.drawText(String.valueOf(key.popupCharacters.charAt(3)), key.x + 10, key.y + 26, mPaint);
+                for (int i = 0; i < len && i < 4; i++) {
+                    mPaint.setTextAlign((i <= 1) ? Paint.Align.RIGHT : Paint.Align.LEFT);
+                    float tx = (i <= 1) ? key.x + key.width - 10 : key.x + 10;
+                    float ty = (i == 0 || i == 3) ? key.y + 26 : key.y + key.height - 10;
+                    canvas.drawText(String.valueOf(key.popupCharacters.charAt(i)), tx, ty, mPaint);
                 }
             }
         }
