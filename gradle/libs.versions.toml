@@ -6,6 +6,7 @@ constraintlayout = "2.1.4"
 material = "1.9.0"
 startupRuntime = "1.1.1"
 interpolator = "1.0.0"
+termux-view = "v0.118.0"
 
 [libraries]
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -13,6 +14,8 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 android-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "startupRuntime" }
 androidx-interpolator = { group = "androidx.interpolator", name = "interpolator", version.ref = "interpolator" }
+termux-terminal-view = { group = "com.github.termux.termux-app", name = "terminal-view", version.ref = "termux-view" }
+termux-terminal-emulator = { group = "com.github.termux.termux-app", name = "terminal-emulator", version.ref = "termux-view" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

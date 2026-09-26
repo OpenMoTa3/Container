@@ -141,4 +141,6 @@ dependencies {
     implementation(libs.android.material)
     implementation(libs.androidx.startup.runtime)
     implementation(libs.androidx.interpolator)
+    implementation(libs.termux.terminal.view)
+    implementation(libs.termux.terminal.emulator)
 }
