@@ -2,7 +2,6 @@
 
 package org.dev.ime.view;
 
-import android.compat.annotation.UnsupportedAppUsage;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -13,7 +12,6 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.inputmethodservice.Keyboard.Key;
 import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Message;
@@ -29,16 +27,12 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-
-import com.android.internal.R;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.dev.ime.view.Keyboard.*;
 
-
-@Deprecated
 public class KeyboardView extends View implements View.OnClickListener {
 
     
@@ -76,7 +70,7 @@ public class KeyboardView extends View implements View.OnClickListener {
 
     private Keyboard mKeyboard;
     private int mCurrentKeyIndex = NOT_A_KEY;
-    @UnsupportedAppUsage
+   
     private int mLabelTextSize;
     private int mKeyTextSize;
     private int mKeyTextColor;
@@ -84,7 +78,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     private int mShadowColor;
     private float mBackgroundDimAmount;
 
-    @UnsupportedAppUsage
+   
     private TextView mPreviewText;
     private PopupWindow mPreviewPopup;
     private int mPreviewTextSizeLarge;
@@ -162,7 +156,7 @@ public class KeyboardView extends View implements View.OnClickListener {
     private float mOldPointerX;
     private float mOldPointerY;
 
-    @UnsupportedAppUsage
+   
     private Drawable mKeyBackground;
 
     private static final int REPEAT_INTERVAL = 50; 
@@ -808,7 +802,7 @@ public class KeyboardView extends View implements View.OnClickListener {
         }
     }
 
-    @UnsupportedAppUsage
+   
     private void showKey(final int keyIndex) {
         final PopupWindow previewPopup = mPreviewPopup;
         final Key[] keys = mKeys;
@@ -940,7 +934,7 @@ public class KeyboardView extends View implements View.OnClickListener {
                 key.x + key.width + mPaddingLeft, key.y + key.height + mPaddingTop);
     }
 
-    @UnsupportedAppUsage
+   
     private boolean openPopupIfRequired(MotionEvent me) {
         
         if (mPopupLayout == 0) {
@@ -1240,7 +1234,7 @@ public class KeyboardView extends View implements View.OnClickListener {
         return true;
     }
 
-    @UnsupportedAppUsage
+   
     private boolean repeatKey() {
         Key key = mKeys[mRepeatKeyIndex];
         detectAndSendKey(mCurrentKey, key.x, key.y, mLastTapTime);

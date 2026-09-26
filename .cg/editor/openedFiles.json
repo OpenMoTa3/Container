@@ -1,0 +1,21 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Container/ime/src/main/java/org/dev/ime/view/Keyboard.java",
+      "selection": {
+        "end": {
+          "column": 37,
+          "index": 12467,
+          "line": 401
+        },
+        "start": {
+          "column": 37,
+          "index": 12467,
+          "line": 401
+        }
+      }
+    }
+  ],
+  "projectPath": "/storage/emulated/0/CodeOnTheGoProjects/Container",
+  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Container/ime/src/main/java/org/dev/ime/view/Keyboard.java"
+}

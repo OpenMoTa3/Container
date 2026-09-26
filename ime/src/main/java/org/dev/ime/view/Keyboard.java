@@ -2,8 +2,6 @@
 
 package org.dev.ime.view;
 
-import android.annotation.XmlRes;
-import android.compat.annotation.UnsupportedAppUsage;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -24,8 +22,6 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 
-
-@Deprecated
 public class Keyboard {
 
     static final String TAG = "Keyboard";
@@ -78,18 +74,18 @@ public class Keyboard {
     private int mKeyHeight;
     
     
-    @UnsupportedAppUsage
+    
     private int mTotalHeight;
     
     
-    @UnsupportedAppUsage
+    
     private int mTotalWidth;
     
     
     private List<Key> mKeys;
     
     
-    @UnsupportedAppUsage
+    
     private List<Key> mModifierKeys;
     
     
@@ -403,7 +399,7 @@ public class Keyboard {
     }
 
     
-    public Keyboard(Context context, @XmlRes int xmlLayoutResId, int modeId, int width,
+    public Keyboard(Context context,  int xmlLayoutResId, int modeId, int width,
             int height) {
         mDisplayWidth = width;
         mDisplayHeight = height;
@@ -419,7 +415,7 @@ public class Keyboard {
     }
 
     
-    public Keyboard(Context context, @XmlRes int xmlLayoutResId, int modeId) {
+    public Keyboard(Context context,  int xmlLayoutResId, int modeId) {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
         mDisplayWidth = dm.widthPixels;
         mDisplayHeight = dm.heightPixels;
@@ -476,7 +472,7 @@ public class Keyboard {
         rows.add(row);
     }
 
-    @UnsupportedAppUsage(maxTargetSdk = Build.VERSION_CODES.P, trackingBug = 115609023)
+    (maxTargetSdk = Build.VERSION_CODES.P, trackingBug = 115609023)
     final void resize(int newWidth, int newHeight) {
         int numRows = rows.size();
         for (int rowIndex = 0; rowIndex < numRows; ++rowIndex) {
