@@ -1,0 +1,38 @@
+{
+  "keyWidth": "25%p",
+  "keyHeight": 60,
+  "rows": [
+    {
+      "keys": [
+        { "codes": [49], "label": "1", "popupCharacters": "!~`#" },
+        { "codes": [50], "label": "2", "popupCharacters": "@^&*" },
+        { "codes": [51], "label": "3", "popupCharacters": "#()_" },
+        { "codes": [-5], "label": "⌫", "isRepeatable": true }
+      ]
+    },
+    {
+      "keys": [
+        { "codes": [52], "label": "4", "popupCharacters": "$[]{}" },
+        { "codes": [53], "label": "5", "popupCharacters": "%\\/|" },
+        { "codes": [54], "label": "6", "popupCharacters": "^;:'" },
+        { "codes": [43], "label": "+", "popupCharacters": "±=" }
+      ]
+    },
+    {
+      "keys": [
+        { "codes": [55], "label": "7", "popupCharacters": "&<>" },
+        { "codes": [56], "label": "8", "popupCharacters": "*\"'" },
+        { "codes": [57], "label": "9", "popupCharacters": "() " },
+        { "codes": [45], "label": "-", "popupCharacters": "_—" }
+      ]
+    },
+    {
+      "keys": [
+        { "codes": [-2], "label": "ABC" },
+        { "codes": [48], "label": "0", "popupCharacters": ")[]" },
+        { "codes": [46], "label": ".", "popupCharacters": ",?!:" },
+        { "codes": [-4], "label": "Done" }
+      ]
+    }
+  ]
+}

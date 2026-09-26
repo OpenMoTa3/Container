@@ -1,0 +1,106 @@
+{
+  "$schema": "Android Keyboard Full Spec",
+  "keyWidth": "10%p",
+  "keyHeight": 54,
+  "horizontalGap": "0px",
+  "verticalGap": 6,
+  "rows": [
+    {
+      "rowEdgeFlags": "top",
+      "mode": 1,
+      "keys": [
+        { "codes": [113], "label": "q", "keyEdgeFlags": "left", "popupCharacters": "1~`!" },
+        { "codes": [119], "label": "w", "popupCharacters": "2@#$" },
+        { "codes": [101], "label": "e", "popupCharacters": "3%^&" },
+        { "codes": [114], "label": "r", "popupCharacters": "4*() " },
+        { "codes": [116], "label": "t", "popupCharacters": "5-_=" },
+        { "codes": [121], "label": "y", "popupCharacters": "6+[]" },
+        { "codes": [117], "label": "u", "popupCharacters": "7{}" },
+        { "codes": [105], "label": "i", "popupCharacters": "8\\|" },
+        { "codes": [111], "label": "o", "popupCharacters": "9;:" },
+        { "codes": [112], "label": "p", "keyEdgeFlags": "right", "popupCharacters": "0'\"" }
+      ]
+    },
+    {
+      "mode": 1,
+      "keys": [
+        { "keyWidth": "5%p", "codes": [], "label": "", "keyEdgeFlags": "left" },
+        { "codes": [97], "label": "a", "popupCharacters": "!" },
+        { "codes": [115], "label": "s", "popupCharacters": "@" },
+        { "codes": [100], "label": "d", "popupCharacters": "#" },
+        { "codes": [102], "label": "f", "popupCharacters": "$" },
+        { "codes": [103], "label": "g", "popupCharacters": "%" },
+        { "codes": [104], "label": "h", "popupCharacters": "&" },
+        { "codes": [106], "label": "j", "popupCharacters": "*" },
+        { "codes": [107], "label": "k", "popupCharacters": "(" },
+        { "codes": [108], "label": "l", "popupCharacters": ")" },
+        { "keyWidth": "5%p", "codes": [], "label": "", "keyEdgeFlags": "right" }
+      ]
+    },
+    {
+      "mode": 1,
+      "keys": [
+        {
+          "keyWidth": "15%p",
+          "codes": [-1],
+          "label": "Shift",
+          "isModifier": true,
+          "isSticky": true,
+          "keyEdgeFlags": "left"
+        },
+        { "codes": [122], "label": "z", "popupCharacters": "-" },
+        { "codes": [120], "label": "x", "popupCharacters": "+" },
+        { "codes": [99], "label": "c", "popupCharacters": "=" },
+        { "codes": [118], "label": "v", "popupCharacters": "/" },
+        { "codes": [98], "label": "b", "popupCharacters": "_" },
+        { "codes": [110], "label": "n", "popupCharacters": "<" },
+        { "codes": [109], "label": "m", "popupCharacters": ">" },
+        {
+          "keyWidth": "15%p",
+          "codes": [-5],
+          "label": "⌫",
+          "isRepeatable": true,
+          "keyEdgeFlags": "right"
+        }
+      ]
+    },
+    {
+      "rowEdgeFlags": "bottom",
+      "mode": 1,
+      "keys": [
+        {
+          "keyWidth": "20%p",
+          "codes": [-2],
+          "label": "?123",
+          "isModifier": true,
+          "keyEdgeFlags": "left"
+        },
+        {
+          "keyWidth": "10%p",
+          "codes": [44],
+          "label": ",",
+          "popupCharacters": ";:'\""
+        },
+        {
+          "keyWidth": "40%p",
+          "codes": [32],
+          "label": "Space",
+          "keyOutputText": " ",
+          "isRepeatable": false
+        },
+        {
+          "keyWidth": "10%p",
+          "codes": [46],
+          "label": ".",
+          "popupCharacters": "?!/\\"
+        },
+        {
+          "keyWidth": "20%p",
+          "codes": [-4],
+          "label": "Done",
+          "keyEdgeFlags": "right"
+        }
+      ]
+    }
+  ]
+}
