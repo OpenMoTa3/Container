@@ -47,8 +47,8 @@ android {
 
     defaultConfig {
         applicationId = "org.dev.custom"
-        minSdk = 21 
-        targetSdk = 36  
+        minSdk = 26
+        targetSdk = 28
         versionCode = 1
         versionName = "1.0"
         
