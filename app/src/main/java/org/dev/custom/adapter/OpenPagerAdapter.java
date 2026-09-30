@@ -3,6 +3,7 @@ package org.dev.custom.adapter;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import org.dev.custom.fragment.OpenFragment;
 import org.dev.custom.fragment.TermuxFragment;
 
 public class OpenPagerAdapter extends FragmentStatePagerAdapter {
@@ -24,6 +25,6 @@ public class OpenPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new TermuxFragment();
+        return new OpenFragment();
     }
 }

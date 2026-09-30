@@ -1,21 +1,36 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/FileFragment.java",
       "selection": {
         "end": {
-          "column": 23,
-          "index": 1408,
-          "line": 35
+          "column": 0,
+          "index": 1407,
+          "line": 44
         },
         "start": {
           "column": 0,
-          "index": 552,
-          "line": 15
+          "index": 845,
+          "line": 26
+        }
+      }
+    },
+    {
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/OpenFragment.java",
+      "selection": {
+        "end": {
+          "column": 70,
+          "index": 472,
+          "line": 13
+        },
+        "start": {
+          "column": 70,
+          "index": 472,
+          "line": 13
         }
       }
     }
   ],
   "projectPath": "/storage/emulated/0/CodeOnTheGoProjects/Custom",
-  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml"
+  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/OpenFragment.java"
 }
