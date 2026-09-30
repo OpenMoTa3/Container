@@ -64,7 +64,7 @@ public class EditorActivity extends AppCompatActivity {
         setContentView(aeb.getRoot());
         ActionBarDrawerToggle abdt =
                 new ActionBarDrawerToggle(
-                        this, aeb.drawerLayout, aeb.toolbar, R.string.app_name, R.string.app_name);
+                        this, aeb.drawerLayout, aeb.toolbar, R.string.drawer_open, R.string.drawer_close);
         aeb.drawerLayout.addDrawerListener(abdt);
         abdt.syncState();
         aeb.tab.setupWithViewPager(aeb.pager);
@@ -76,7 +76,7 @@ public class EditorActivity extends AppCompatActivity {
             }
         });*/
         aeb.bottomTab.setupWithViewPager(aeb.bottomPager);
-      /*  aeb.drawerToolbar.setTitle("Project Files");
+        aeb.drawerToolbar.setTitle("Project Files");
         aeb.drawerRail.setOnItemSelectedListener(
                 (item) -> {
                     int i = item.getItemId();
@@ -90,7 +90,7 @@ public class EditorActivity extends AppCompatActivity {
                         return true;
                     }
                     return false;
-                });*/
+                });
         aeb.bottomPager.setAdapter((bpa = new BottomPagerAdapter(this)));
         aeb.drawerPager.setAdapter((dpa = new DrawerPagerAdapter(this)));
         aeb.pager.setAdapter((opa = new OpenPagerAdapter(this)));

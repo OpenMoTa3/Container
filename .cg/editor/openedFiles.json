@@ -1,0 +1,21 @@
+{
+  "allFiles": [
+    {
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml",
+      "selection": {
+        "end": {
+          "column": 23,
+          "index": 1408,
+          "line": 35
+        },
+        "start": {
+          "column": 0,
+          "index": 552,
+          "line": 15
+        }
+      }
+    }
+  ],
+  "projectPath": "/storage/emulated/0/CodeOnTheGoProjects/Custom",
+  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/adapter_card_file.xml"
+}

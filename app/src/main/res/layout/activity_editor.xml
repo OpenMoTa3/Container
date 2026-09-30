@@ -9,48 +9,6 @@
     tools:openDrawer="start"
     android:fitsSystemWindows="true"
     android:id="@+id/drawer_layout">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_height="match_parent"
-        android:layout_width="369dp"
-        android:clickable="false"
-        android:focusable="false"
-        android:background="?attr/colorSurface"
-        android:layout_gravity="start">
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/drawer_appbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toRightOf="@id/drawer_rail"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/drawer_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:titleTextColor="?attr/colorPrimary"
-            />
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <com.google.android.material.navigationrail.NavigationRailView
-            android:layout_height="0dp"
-            android:layout_width="wrap_content"
-            app:menu="@menu/drawer_editor_menu"
-            android:id="@+id/drawer_rail"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
-        <androidx.viewpager.widget.ViewPager
-            android:layout_height="0dp"
-            android:layout_width="0dp"
-            android:id="@+id/drawer_pager"
-            app:layout_constraintLeft_toRightOf="@id/drawer_rail"
-            app:layout_constraintTop_toBottomOf="@id/drawer_appbar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -109,14 +67,56 @@
         </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_height="match_parent"
+        android:layout_width="369dp"
+        android:background="?attr/colorSurface"
+        android:layout_gravity="start">
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/drawer_appbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/drawer_rail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/drawer_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="?attr/colorPrimary"
+            />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.navigationrail.NavigationRailView
+            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            app:menu="@menu/drawer_editor_menu"
+            android:id="@+id/drawer_rail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.viewpager.widget.ViewPager
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:id="@+id/drawer_pager"
+            app:layout_constraintLeft_toRightOf="@id/drawer_rail"
+            app:layout_constraintTop_toBottomOf="@id/drawer_appbar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_height="match_parent"
         android:layout_width="369dp"
         android:background="?attr/colorSurface"
         android:layout_gravity="end">
         <Button
-            android:layout_height="match_parent"
-            android:layout_width="369dp"
-        />
+            android:id="@+id/drawer_end_button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="按钮" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
