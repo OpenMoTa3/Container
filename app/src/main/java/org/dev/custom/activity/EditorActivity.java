@@ -75,14 +75,17 @@ public class EditorActivity extends AppCompatActivity {
             }
         });*/
         aeb.bottomTab.setupWithViewPager(aeb.bottomPager);
+        aeb.drawerToolbar.setTitle("Project Files");
         aeb.drawerRail.setOnItemSelectedListener(
                 (item) -> {
                     int i = item.getItemId();
                     if (i == R.id.nav_project) {
+                        aeb.drawerToolbar.setTitle("Project Files");
                         aeb.drawerPager.setCurrentItem(0);
                         return true;
                     }
                    else if (i == R.id.nav_branch) {
+                       aeb.drawerToolbar.setTitle("Project Branch");
                         aeb.drawerPager.setCurrentItem(1);
                         return true;
                     }

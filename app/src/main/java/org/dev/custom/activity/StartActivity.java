@@ -10,4 +10,5 @@ public class StartActivity extends Activity {
         super.onCreate(savedInstanceState);
         startActivity(new Intent(this,MainActivity.class));
     }
+
 }
