@@ -1,22 +1,7 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/OpenFragment.java",
-      "selection": {
-        "end": {
-          "column": 57,
-          "index": 740,
-          "line": 18
-        },
-        "start": {
-          "column": 57,
-          "index": 740,
-          "line": 18
-        }
-      }
-    },
-    {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/fragment_open.xml",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/activity/StartActivity.java",
       "selection": {
         "end": {
           "column": 0,
@@ -32,5 +17,5 @@
     }
   ],
   "projectPath": "/storage/emulated/0/CodeOnTheGoProjects/Custom",
-  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/OpenFragment.java"
+  "selectedFile": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/activity/StartActivity.java"
 }
