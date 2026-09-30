@@ -64,7 +64,11 @@ public class EditorActivity extends AppCompatActivity {
         setContentView(aeb.getRoot());
         ActionBarDrawerToggle abdt =
                 new ActionBarDrawerToggle(
-                        this, aeb.drawerLayout, aeb.toolbar, R.string.drawer_open, R.string.drawer_close);
+                        this,
+                        aeb.drawerLayout,
+                        aeb.toolbar,
+                        R.string.drawer_open,
+                        R.string.drawer_close);
         aeb.drawerLayout.addDrawerListener(abdt);
         abdt.syncState();
         aeb.tab.setupWithViewPager(aeb.pager);
@@ -94,9 +98,20 @@ public class EditorActivity extends AppCompatActivity {
         aeb.bottomPager.setAdapter((bpa = new BottomPagerAdapter(this)));
         aeb.drawerPager.setAdapter((dpa = new DrawerPagerAdapter(this)));
         aeb.pager.setAdapter((opa = new OpenPagerAdapter(this)));
+        aeb.symbolinputview.addSymbols(
+                new String[] {
+                    "Tab", "{", "}", "(", ")", "[", "]", ";", ".", ",", "=", "\"", "'", "_", ":",
+                    "/", "\\", "<", ">", "->", "+", "-", "*", "%", "!", "?", "==", "!=", ">=", "<=",
+                    "&&", "||", "+=", "-=", "++", "--", "::", "?.", "?:", "!!"
+                },
+                new String[] {
+                    "\t", "{", "}", "(", ")", "[", "]", ";", ".", ",", "=", "\"", "'", "_", ":",
+                    "/", "\\", "<", ">", "->", "+", "-", "*", "%", "!", "?", "==", "!=", ">=", "<=",
+                    "&&", "||", "+=", "-=", "++", "--", "::", "?.", "?:", "!!"
+                });
+        aeb.symbolinputview.setBackgroundColor(0x000000);
         BottomSheetBehavior<View> bottomSheet = BottomSheetBehavior.from(aeb.bottomSheetLayout);
-        bottomSheet.setPeekHeight(200);
-        bottomSheet.setMaxHeight(2000);
-        
+        bottomSheet.setPeekHeight(137);
+        bottomSheet.setMaxHeight(2020);
     }
 }

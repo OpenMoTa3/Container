@@ -3,7 +3,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import io.github.rosemoe.sora.widget.schemes.SchemeDarcula;
+import io.github.rosemoe.sora.widget.schemes.SchemeGitHub;
+import org.dev.custom.databinding.FragmentOpenBinding;
 
 public class OpenFragment extends Fragment {
 
@@ -11,7 +15,8 @@ public class OpenFragment extends Fragment {
 
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        fob = FragmentFileBinding.inflate(inflater, container, false);
+        fob = FragmentOpenBinding.inflate(inflater, container, false);
+        fob.codeEditor.setColorScheme(new SchemeDarcula());
         return fob.getRoot();
     }
 

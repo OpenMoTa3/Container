@@ -1,32 +1,32 @@
 {
   "allFiles": [
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/FileFragment.java",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/OpenFragment.java",
       "selection": {
         "end": {
-          "column": 0,
-          "index": 1407,
-          "line": 44
+          "column": 57,
+          "index": 740,
+          "line": 18
         },
         "start": {
-          "column": 0,
-          "index": 845,
-          "line": 26
+          "column": 57,
+          "index": 740,
+          "line": 18
         }
       }
     },
     {
-      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/java/org/dev/custom/fragment/OpenFragment.java",
+      "file": "/storage/emulated/0/CodeOnTheGoProjects/Custom/app/src/main/res/layout/fragment_open.xml",
       "selection": {
         "end": {
-          "column": 70,
-          "index": 472,
-          "line": 13
+          "column": 0,
+          "index": 0,
+          "line": 0
         },
         "start": {
-          "column": 70,
-          "index": 472,
-          "line": 13
+          "column": 0,
+          "index": 0,
+          "line": 0
         }
       }
     }
