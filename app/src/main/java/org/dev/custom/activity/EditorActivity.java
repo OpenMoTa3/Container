@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import org.dev.custom.adapter.BottomPagerAdapter;
 import org.dev.custom.adapter.DrawerPagerAdapter;
@@ -75,7 +76,7 @@ public class EditorActivity extends AppCompatActivity {
             }
         });*/
         aeb.bottomTab.setupWithViewPager(aeb.bottomPager);
-        aeb.drawerToolbar.setTitle("Project Files");
+      /*  aeb.drawerToolbar.setTitle("Project Files");
         aeb.drawerRail.setOnItemSelectedListener(
                 (item) -> {
                     int i = item.getItemId();
@@ -83,19 +84,19 @@ public class EditorActivity extends AppCompatActivity {
                         aeb.drawerToolbar.setTitle("Project Files");
                         aeb.drawerPager.setCurrentItem(0);
                         return true;
-                    }
-                   else if (i == R.id.nav_branch) {
-                       aeb.drawerToolbar.setTitle("Project Branch");
+                    } else if (i == R.id.nav_branch) {
+                        aeb.drawerToolbar.setTitle("Project Branch");
                         aeb.drawerPager.setCurrentItem(1);
                         return true;
                     }
                     return false;
-                });
+                });*/
         aeb.bottomPager.setAdapter((bpa = new BottomPagerAdapter(this)));
         aeb.drawerPager.setAdapter((dpa = new DrawerPagerAdapter(this)));
         aeb.pager.setAdapter((opa = new OpenPagerAdapter(this)));
         BottomSheetBehavior<View> bottomSheet = BottomSheetBehavior.from(aeb.bottomSheetLayout);
         bottomSheet.setPeekHeight(200);
         bottomSheet.setMaxHeight(2000);
+        
     }
 }
