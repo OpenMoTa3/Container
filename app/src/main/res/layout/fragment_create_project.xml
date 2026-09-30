@@ -41,7 +41,7 @@
         android:hint="语言"
         app:endIconMode="dropdown_menu">
 
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/language"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         android:hint="最低 Android 版本 (minSdk)"
         app:endIconMode="dropdown_menu">
 
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
             android:id="@+id/min_sdk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
