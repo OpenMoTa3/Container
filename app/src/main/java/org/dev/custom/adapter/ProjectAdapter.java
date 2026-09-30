@@ -23,7 +23,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public ProjectCard onCreateViewHolder(ViewGroup parent, int viewType) {
         return new ProjectCard(
                 LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.adapter_projectcard, parent, false),parent.getContext());
+                        .inflate(R.layout.adapter_card_project, parent, false),parent.getContext());
     }
 
     @Override

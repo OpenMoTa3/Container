@@ -2,10 +2,13 @@ package org.dev.custom.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceFragmentCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.preference.PreferenceFragment;
 import org.dev.custom.R;
 import org.dev.custom.databinding.ActivityMainBinding;
 import org.dev.custom.databinding.ActivitySettingsBinding;
+import org.dev.custom.fragment.RootSettingsFragment;
 public class SettingsActivity extends AppCompatActivity {
     ActivitySettingsBinding asb;
 
@@ -23,6 +26,6 @@ public class SettingsActivity extends AppCompatActivity {
     	asb = ActivitySettingsBinding.inflate(getLayoutInflater());
         setSupportActionBar(asb.toolbar);
         setContentView(asb.getRoot());
-   
+        getSupportFragmentManager().beginTransaction().add(R.id.content,new RootSettingsFragment(),"root").commitNow();
     }
 }
