@@ -17,10 +17,8 @@ public class TermuxFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        
         ftb = FragmentTermuxBinding.inflate(inflater, container, false);
         View root = ftb.getRoot();
-
            return root;
     }
 

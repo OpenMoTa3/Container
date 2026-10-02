@@ -75,13 +75,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="包含原生 C/C++ 库 (NDK)"
-        android:visibility="gone" />
+         />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/create"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_margin="8dp"
         android:text="创建项目" />
 
 </LinearLayout>
